@@ -1,0 +1,61 @@
+<title>Zugo App Mockups</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+
+<header class="v-top">
+  <div class="v-top-inner">
+    <div class="v-mark">
+      <div class="v-logo" aria-hidden="true">Z</div>
+      <div class="v-mark-text">
+        <div class="v-mark-title">Zugo mockups</div>
+        <div class="v-mark-sub">Food delivery · 2 apps · 3 roles</div>
+      </div>
+    </div>
+    <div class="v-tabs" id="v-tabs" role="tablist" aria-label="Apps and documents"></div>
+    <div class="v-tools">
+      <button class="v-btn" data-vact="phase2" aria-pressed="false" title="Show the delivery-boy role planned for Phase 2">Preview Phase 2 (delivery boys)</button>
+      <button class="v-btn" data-vact="resetAll" title="Clear cart, orders and logins in all three apps">Reset demo</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="v-view" data-pane="app">
+    <div class="v-work">
+      <nav class="v-rail" id="v-rail" aria-label="Screens"></nav>
+      <div class="v-stage">
+        <div class="v-stage-head">
+          <div class="v-crumb" id="v-crumb"></div>
+          <div class="v-nav-btns">
+            <button class="v-btn" id="v-back" data-vact="back">Back</button>
+            <button class="v-btn" data-vact="restart">Restart app</button>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-screen" id="phone-screen"></div>
+        </div>
+        <p class="v-hint">Tap through it like the real app. Both apps share one live order: place it as the customer, then accept and deliver it as the admin and watch the customer tracking update.</p>
+      </div>
+      <aside class="v-notes" id="v-notes" aria-label="Screen notes"></aside>
+    </div>
+  </section>
+
+  <section class="v-view" data-pane="flows" hidden>
+    <div class="v-doc" id="page-flows"></div>
+  </section>
+
+  <section class="v-view" data-pane="plan" hidden>
+    <div class="v-doc" id="page-plan"></div>
+  </section>
+</main>
+
+<script src="assets/core.js"></script>
+<script src="assets/customer.js"></script>
+<script src="assets/admin.js"></script>
+<script src="assets/delivery.js"></script>
+<script src="assets/flows.js"></script>
+<script src="assets/plan.js"></script>
+<script>Z.boot();</script>

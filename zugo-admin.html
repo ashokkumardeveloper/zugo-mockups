@@ -1,0 +1,27 @@
+<title>Zugo Operator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* Full-screen app mode: no frame, no viewer chrome. The app fills the phone browser. */
+  html, body { height: 100%; }
+  body { background: #eef3f6; overscroll-behavior: none; }
+  .phone.full {
+    width: 100%; max-width: 480px; height: 100%; min-height: 0;
+    margin: 0 auto; padding: 0; border-radius: 0; background: #fff; box-shadow: none;
+  }
+  .phone.full .phone-screen { border-radius: 0; }
+  .phone.full .sb { display: none; }          /* the real phone shows its own status bar */
+  .phone.full .push { top: 8px; }
+  @media (min-width: 481px) { .phone.full { box-shadow: 0 0 0 1px #d8e1e8, 0 12px 40px rgba(16,32,42,.12); } }
+</style>
+<div class="phone full"><div class="phone-screen" id="phone-screen"></div></div>
+<script src="assets/core.js"></script>
+<script src="assets/customer.js"></script>
+<script src="assets/admin.js"></script>
+<script src="assets/delivery.js"></script>
+<script>Z.setView('admin');</script>
