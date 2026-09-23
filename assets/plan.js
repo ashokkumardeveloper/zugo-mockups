@@ -89,8 +89,8 @@
     '├── README.md                    # quick start + links to docs/',
     '├── env/zugo.example.json        # committed; env/zugo.json is git-ignored',
     '├── apps/',
-    '│   ├── zugo/                    # customer app  "Zugo"          in.zugo.app',
-    '│   └── zugo_operator/           # "Zugo Operator" (admin; delivery role in Phase 2) in.zugo.operator',
+    '│   ├── zugo/                    # customer app  "Zugo"          com.zugo.app',
+    '│   └── zugo_operator/           # "Zugo Operator" (admin; delivery role in Phase 2) com.zugo.operator',
     '├── packages/food/               # food module: restaurants, menu items, FoodModule',
     '├── packages/grocery/  meat/     # later modules, same ServiceModule contract',
     '├── packages/core/lib/',
@@ -187,7 +187,7 @@
     ['Languages', 'English only', 'Malayalam: +5 days'],
     ['iOS release', 'Android first', '+3–4 days, plus an Apple account'],
     ['Maps API costs', 'OSM tiles, links resolved server-side, no Google key', 'Paid tiles at scale; Ola is billed per call'],
-    ['Package ids', 'in.zugo.app / in.zugo.operator', 'Must be final before the first upload']
+    ['Package ids', 'com.zugo.app / com.zugo.operator', 'Must be final before the first upload']
   ];
 
   /* ---------------- builders ---------------- */
