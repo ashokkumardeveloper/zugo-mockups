@@ -134,7 +134,7 @@
     render: function () {
       const s = me();
       return '<div class="scroll d-login"><div class="auth-hero" style="padding:36px 8px 8px">' +
-        '<div class="auth-logo">Z</div>' +
+        '<img class="auth-logo-img" src="' + Z.IMG + 'zugo-icon.jpg" alt="Zugo">' +
         '<div class="t-heading" style="color:var(--brand-ink);font-size:24px">Operator Login</div>' +
         '<div class="t-cap" style="font-size:13px">Sign in to manage operations</div></div>' +
         '<div class="pad" style="padding:16px 8px">' +

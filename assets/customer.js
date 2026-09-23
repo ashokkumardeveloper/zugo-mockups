@@ -188,8 +188,8 @@
   Z.screen('customer', {
     id: 'c-splash', group: 'Start', title: 'Splash', route: '/ (splash)', sb: 'brand', needsLogin: false,
     render: function () {
-      return '<button class="splash c-splash" data-act="c.start"><div class="sp-logo">Z</div><div class="sp-n">Zugo</div>' +
-        '<div class="sp-t">Food from Kochi\'s favourite kitchens</div><span class="btn">Continue</span></button>';
+      return '<button class="splash c-splash" data-act="c.start"><img class="sp-img" src="' + Z.IMG + 'zugo-logo.jpg" alt="Zugo. Click. Order. Enjoy.">' +
+        '<span class="btn" style="margin-top:28px">Continue</span></button>';
     },
     notes: {
       purpose: 'Brand splash while main.dart starts Firebase + Supabase, restores the session and loads app_config.',
@@ -211,7 +211,7 @@
     id: 'c-login', group: 'Start', title: 'Login', route: '/login', needsLogin: false,
     render: function () {
       return authShell(
-        '<div class="auth-logo" style="margin:12px auto 16px">Z</div>' +
+        '<img class="auth-logo-img" style="margin:12px auto 16px" src="' + Z.IMG + 'zugo-icon.jpg" alt="Zugo">' +
         '<div class="t-heading t-center">Welcome back</div><div class="t-body t-muted t-center mb-16">Login to your account</div>' +
         '<div class="field"><label class="lbl">Email</label><input class="inp" type="email" value="rahul.nair@example.com"></div>' +
         '<div class="field"><label class="lbl">Password</label><input class="inp" type="password" value="zugo1234"></div>' +

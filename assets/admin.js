@@ -52,7 +52,7 @@
     '.a-tx.b{color:var(--brand)}.a-tx.g{color:var(--a-success-ink)}.a-tx.r{color:var(--a-error-ink)}',
     '.tg.a-food.on{background:var(--food)}',
     '.tg.a-red.on{background:var(--a-error)}',
-    '.a-fab{width:56px;height:56px;padding:0;border-radius:50%;justify-content:center;background:var(--food);font-size:28px;font-weight:400;box-shadow:0 4px 14px rgba(3,169,244,.4)}',
+    '.a-fab{width:56px;height:56px;padding:0;border-radius:50%;justify-content:center;background:var(--food);font-size:28px;font-weight:400;box-shadow:0 4px 14px rgba(0,147,67,.4)}',
     '.a-fab.nonav{bottom:20px}',
     '.a-grp{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--food-ink);margin:16px 0 8px}',
     '.a-grp:first-child{margin-top:2px}',
@@ -95,11 +95,11 @@
     '.a-ban .img .bt{position:absolute;left:12px;bottom:10px;right:12px;text-align:left;font-size:13px;font-weight:700;color:#212121;line-height:1.3}',
     '.a-ban .img .bt small{display:block;font-size:10px;font-weight:600;color:var(--brand-ink)}',
     '.a-pv{background:#fff;border-radius:14px;box-shadow:var(--sh-elev);padding:10px 12px;display:flex;gap:10px;border:1px solid var(--a-border)}',
-    '.a-pv .ic0{width:28px;height:28px;border-radius:7px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;flex-shrink:0}',
+    '.a-pv .ic0{width:28px;height:28px;border-radius:50%;flex-shrink:0}',
     '.a-pv .ap{font-size:10px;color:var(--a-text2);display:flex;justify-content:space-between}',
     '.a-pv .pt{font-size:13px;font-weight:600}.a-pv .pb{font-size:12px;color:var(--a-text2)}',
     '.a-cal{height:150px}',
-    '.a-cal .ring{position:absolute;left:50%;top:50%;border-radius:50%;border:2px dashed var(--brand);background:rgba(25,118,210,.08);transform:translate(-50%,-50%)}',
+    '.a-cal .ring{position:absolute;left:50%;top:50%;border-radius:50%;border:2px dashed var(--brand);background:rgba(0,122,56,.08);transform:translate(-50%,-50%)}',
     '.a-hist{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--a-divider)}',
     '.a-hist:last-child{border-bottom:0}',
     '.a-hist .d{width:10px;height:10px;border-radius:50%;margin-top:5px;flex-shrink:0}',
@@ -303,7 +303,7 @@
     render: function () {
       const L = st('aLogin', { email: '', password: '', err: '' });
       return '<div class="scroll"><div class="a-login">' +
-        '<div class="a-logo">Z</div>' +
+        '<img class="auth-logo-img" src="' + Z.IMG + 'zugo-icon.jpg" alt="Zugo">' +
         '<div class="t-heading" style="color:var(--brand)">Operator Login</div>' +
         '<div class="t-cap" style="margin-bottom:22px">Sign in to manage operations</div>' +
         (L.err ? '<div class="note err a-err">' + Z.icon('warn') + '<div>' + E(L.err) + '</div></div>' : '') +
@@ -1391,7 +1391,7 @@
         field('Image <span class="opt">(optional)</span>', b.img ? '<div style="position:relative;width:120px;height:68px">' + Z.img('🍛', 'warm', '') + '<button class="thumb-x" data-act="a.bcImg" aria-label="Remove">' + Z.icon('close') + '</button></div>'
           : '<div class="upl" style="width:120px;height:68px" data-act="a.bcImg">' + Z.icon('image') + '<span>Add image</span></div>') +
         '<div class="sec-h"><h4>Preview</h4></div>' +
-        '<div class="a-pv"><div class="ic0">Z</div><div class="grow"><div class="ap"><span>' + (b.aud === 'delivery' ? 'ZUGO OPERATOR' : 'ZUGO') + '</span><span>now</span></div><div class="pt" id="a-pv-t">' + E(b.title || 'Title') + '</div><div class="pb" id="a-pv-b">' + E(b.body || 'Message') + '</div></div>' + (b.img ? Z.img('🍛', 'warm s40') : '') + '</div>' +
+        '<div class="a-pv">' + Z.logo(36, 'ic0') + '<div class="grow"><div class="ap"><span>' + (b.aud === 'delivery' ? 'ZUGO OPERATOR' : 'ZUGO') + '</span><span>now</span></div><div class="pt" id="a-pv-t">' + E(b.title || 'Title') + '</div><div class="pb" id="a-pv-b">' + E(b.body || 'Message') + '</div></div>' + (b.img ? Z.img('🍛', 'warm s40') : '') + '</div>' +
         '</div><div class="sticky"><button class="btn block" data-act="a.send">📣 Send to ' + a[1].toLowerCase() + '</button></div>';
     },
     mount: function (root) {

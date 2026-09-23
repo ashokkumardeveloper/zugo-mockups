@@ -32,6 +32,11 @@
      Phase 2 turns deliveryRole on (maps to app_config key feature_delivery_role). */
   Z.FEATURES = { deliveryRole: false };
   Z.ADMIN_ID = 'st4';
+  // logo images live next to this script: assets/img/
+  Z.IMG = ((document.currentScript && document.currentScript.src) || 'assets/core.js').replace(/core\.js.*$/, '') + 'img/';
+  Z.logo = function (size, cls) {
+    return '<img class="logo-icon' + (cls ? ' ' + cls : '') + '" src="' + Z.IMG + 'zugo-icon.jpg" alt="Zugo" width="' + size + '" height="' + size + '">';
+  };
 
   /* ---------------- icons (Material Icons baseline paths, 24px) ---------------- */
   const P = {
@@ -220,7 +225,7 @@
     const n = Z.cartCount();
     return '<header class="ab" style="border-bottom:0">' +
       '<button class="ib" data-act="drawer" aria-label="Menu">' + Z.icon('menu') + '</button>' +
-      '<div class="ab-title" style="color:var(--brand);font-size:18px">Zugo</div>' +
+      '<div class="ab-title row" style="color:var(--brand);font-size:18px;gap:8px">' + Z.logo(30) + 'Zugo</div>' +
       '<button class="ib" data-go="c-cart" aria-label="Cart"><span style="font-size:22px">🛒</span>' + (n ? '<span class="dot-badge" style="border:1.5px solid #fff;min-width:18px;height:18px;border-radius:9px;top:2px;right:0">' + (n > 9 ? '9+' : n) + '</span>' : '') + '</button>' +
       '</header>';
   };
@@ -231,7 +236,7 @@
       ? '<span class="t-cap b" style="color:' + (Z.S.dutyOnline ? '#2e7d32' : 'var(--a-hint)') + '">' + (Z.S.dutyOnline ? 'Online' : 'Offline') + '</span><button class="tg' + (Z.S.dutyOnline ? ' on' : '') + '" data-act="toggleDuty" aria-label="Online status"></button>'
       : '<button class="ib" data-go="a-profile" aria-label="Profile"><span class="avatar" style="width:32px;height:32px;font-size:12px">' + me.name.split(' ').map(function (w) { return w[0]; }).join('').slice(0, 2) + '</span></button>';
     return '<header class="ab">' +
-      '<div class="ab-titles"><span class="ab-title" style="color:var(--brand);font-size:17px">Zugo <span style="color:var(--a-text2);font-weight:400;font-size:13px">Operator</span></span></div>' +
+      '<div class="ab-titles row" style="gap:8px">' + Z.logo(28) + '<span class="ab-title" style="color:var(--brand);font-size:17px">Zugo <span style="color:var(--a-text2);font-weight:400;font-size:13px">Operator</span></span></div>' +
       '<div class="row" style="gap:8px;padding-right:8px">' + right + '</div></header>';
   };
 
@@ -638,7 +643,7 @@
     if (!el) return;
     const a = Z.APPS[app];
     el.innerHTML = '<div class="push" data-push role="alert"' + (n.go ? ' data-go="' + n.go + '"' + (n.p ? " data-p='" + JSON.stringify(n.p) + "'" : '') : '') + '>' +
-      '<div class="p-ic">' + (app === 'customer' ? 'Z' : Z.icon(app === 'admin' ? 'store' : 'bike', 'sm')) + '</div><div class="grow">' +
+      (app === 'customer' ? Z.logo(36, 'p-logo') : '<div class="p-ic">' + Z.icon(app === 'admin' ? 'store' : 'bike', 'sm') + '</div>') + '<div class="grow">' +
       '<div class="p-app"><span>' + a.name.toUpperCase() + '</span><span>now</span></div>' +
       '<div class="p-t">' + Z.esc(n.t) + '</div><div class="p-b">' + Z.esc(n.b) + '</div></div></div>';
     clearTimeout(pushTimer);
